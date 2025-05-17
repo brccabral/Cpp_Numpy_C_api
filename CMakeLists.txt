@@ -17,3 +17,10 @@ target_sources(numpycpp_2
     numpycpp_2.cpp
 )
 target_link_libraries(numpycpp_2 PRIVATE Python3::Python Python3::Module Python3::NumPy)
+
+add_executable(numpycpp_3)
+target_sources(numpycpp_3
+    PRIVATE
+    numpycpp_3.cpp
+)
+target_link_libraries(numpycpp_3 PRIVATE Python3::Python Python3::Module Python3::NumPy)
