@@ -1,6 +1,14 @@
 cmake_minimum_required(VERSION 3.23 FATAL_ERROR)
 project(NumpyCpp LANGUAGES CXX)
 
+if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/.venv")
+    set(Python3_ROOT_DIR "${CMAKE_CURRENT_SOURCE_DIR}/.venv")
+endif ()
+
+if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/venv")
+    set(Python3_ROOT_DIR "${CMAKE_CURRENT_SOURCE_DIR}/venv")
+endif ()
+
 find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
 find_package(Python3 COMPONENTS NumPy REQUIRED)
 
